@@ -12,19 +12,19 @@
     <div class="container">
       <h1>TO DO LIST</h1>
       <div class="list-wrapper">
-        <ul id="to-do-list">
+        <ol id="to-do-list">
 
-        </ul>
+        </ol>
       </div>
       <input id="input-data" type="text" name="" value="" placeholder="Inserisci una nuova voce">
-      <button id="send-data">Invia</button>
+      <button class="btn btn_green" id="send-data">Invia</button>
 
     </div>
   <script id="entry-template" type="text/x-handlebars-template">
     <li class="modify" data-attribute="{{id}}">{{text}} <i class="fas fa-times"></i> <i class="far fa-edit"></i>
       <div class="update">
         <input id="modify-data" type="text" placeholder="Modifica la voce">
-        <button id="send-modified-data">Invia</button>
+        <button class="btn btn_blue" id="send-modified-data">Invia</button>
       </div>
     </li>
   </script>

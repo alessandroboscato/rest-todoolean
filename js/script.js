@@ -2,6 +2,13 @@
 
 $(document).ready(function(){
 
+  //READ
+  // funzione che stampa la lista dei to do presenti nell'api
+  createList();
+
+  // CREATE
+  // funzione che aggiunge un elemento
+
   $("#send-data").click(function(){
     var inputUser = $("#input-data").val();
     if (inputUser != "") {
@@ -24,21 +31,6 @@ $(document).ready(function(){
     }
     $("#input-data").val("");
   })
-
-  // READ
-
-  $.ajax({
-    "url": "http://157.230.17.132:3007/todos",
-    "method": "GET",
-    "success": function(data){
-      for (var i = 0; i < data.length; i++) {
-        renderData(data[i]);
-      }
-    },
-    "error": function(){
-      alert();
-    }
-  });
 
   $("#to-do-list").on("click", ".fa-edit", function(){
     $(this).next(".update").toggle();
@@ -69,7 +61,7 @@ $(document).ready(function(){
 
   $(document).on("click", ".fa-times", function(){
     var toDeleteId = $(this).parents("li.modify").attr("data-attribute");
-    
+
     // DELETE
 
     $.ajax({

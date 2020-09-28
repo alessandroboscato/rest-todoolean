@@ -5,9 +5,14 @@
 }
 
 /* mix */
-
 .d_inline {
   display: inline-block;
+}
+
+/* general */
+
+body {
+  font-size: 26px;
 }
 
 .container {
@@ -24,6 +29,40 @@
 
 .list-wrapper {
   margin: auto;
+}
+
+#to-do-list {
+  margin-left: 60px;
+  line-height: 50px;
+}
+
+input {
+  font-size: 18px;
+  height: 40px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.btn_green {
+  background-color: green;
+}
+
+.btn_blue {
+  background-color: lightblue;
+}
+
+.fa-times:hover {
+  color: red;
+  font-size: 40px;
+}
+
+.fa-edit:hover, .fa-edit:active {
+  color: lightblue;
+  font-size: 30px;
 }
 
 .update {
