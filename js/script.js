@@ -46,6 +46,7 @@ $(document).ready(function(){
       var inputUser = $(this).siblings("#modify-data").val();
       if (inputUser != "") {
         var idSelected= $(this).parents("li").attr("data-attribute");
+
         // UPDATE
 
         $.ajax({
@@ -56,7 +57,7 @@ $(document).ready(function(){
           },
           "success": function(data){
             alert("Hai modificato la voce");
-            renderData(data);
+            
           },
           "error": function(){
             alert();
