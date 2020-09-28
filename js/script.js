@@ -5,7 +5,7 @@ $(document).ready(function(){
   $("#send-data").click(function(){
     var inputUser = $("#input-data").val();
     if (inputUser != "") {
-      
+
       // CREATE
 
       $.ajax({
@@ -15,7 +15,7 @@ $(document).ready(function(){
           "text": inputUser
         },
         "success": function(data){
-          console.log(data);
+          renderData(data);
         },
         "error": function(){
           alert();
@@ -24,8 +24,6 @@ $(document).ready(function(){
     }
     $("#input-data").val("");
   })
-
-
 
   // READ
 
@@ -41,6 +39,10 @@ $(document).ready(function(){
       alert();
     }
   });
+
+  $("#to-do-list").on("click", ".fa-edit", function(){
+    $(this).next("#modify-data").toggle();
+  })
 
   // UPDATE
 

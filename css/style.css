@@ -7,7 +7,7 @@
 /* mix */
 
 .d_inline {
-  display: block;
+  display: inline-block;
 }
 
 .container {
@@ -24,4 +24,8 @@
 
 .list-wrapper {
   margin: auto;
+}
+
+#modify-data {
+  display: none;
 }
