@@ -57,13 +57,12 @@ $(document).ready(function(){
           },
           "success": function(data){
             alert("Hai modificato la voce");
-            
+
           },
           "error": function(){
             alert();
           }
         });
-
       }
     })
   })
