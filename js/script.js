@@ -41,21 +41,33 @@ $(document).ready(function(){
   });
 
   $("#to-do-list").on("click", ".fa-edit", function(){
-    $(this).next("#modify-data").toggle();
+    $(this).next(".update").toggle();
+    $("#send-modified-data").click(function(){
+      var inputUser = $(this).siblings("#modify-data").val();
+      if (inputUser != "") {
+        var idSelected= $(this).parents("li").attr("data-attribute");
+        // UPDATE
+
+        $.ajax({
+          "url": "http://157.230.17.132:3007/todos/" + idSelected,
+          "method": "PATCH",
+          "data": {
+            "text": inputUser
+          },
+          "success": function(data){
+            alert("Hai modificato la voce");
+            renderData(data);
+          },
+          "error": function(){
+            alert();
+          }
+        });
+
+      }
+    })
   })
 
-  // UPDATE
 
-  // $.ajax({
-  //   "url": "http://157.230.17.132:3007/todos",
-  //   "method": "PATCH",
-  //   "success": function(data){
-  //
-  //   },
-  //   "error": function(){
-  //     alert();
-  //   }
-  // });
 
   // DELETE
   //
