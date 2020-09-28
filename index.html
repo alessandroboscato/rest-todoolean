@@ -9,17 +9,18 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>TO DO LIST</h1>
-      </header>
-      <main>
+      <h1>TO DO LIST</h1>
+      <div class="list-wrapper">
         <ul id="to-do-list">
 
         </ul>
-      </main>
+      </div>
+      <input id="input-data" type="text" name="" value="" placeholder="Inserisci una nuova voce">
+      <button id="send-data">Invia</button>
+
     </div>
   <script id="entry-template" type="text/x-handlebars-template">
-
+    <li data-attribute="{{id}}">{{text}}</li>
   </script>
   <!-- handlebars -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>

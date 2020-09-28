@@ -4,11 +4,24 @@
   padding: 0;
 }
 
+/* mix */
+
+.d_inline {
+  display: block;
+}
 
 .container {
   width: 1200px;
   height: 100vh;
+  padding: 300px 0;
   margin: auto;
   background-color: #FCEA7D;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list-wrapper {
+  margin: auto;
 }
