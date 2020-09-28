@@ -3,3 +3,12 @@
   margin: 0;
   padding: 0;
 }
+
+
+.container {
+  width: 1200px;
+  height: 100vh;
+  margin: auto;
+  background-color: #FCEA7D;
+  text-align: center;
+}
