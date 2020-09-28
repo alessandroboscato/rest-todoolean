@@ -65,62 +65,37 @@ $(document).ready(function(){
         }
       })
     }
+  });
 
+  $(document).on("click", ".fa-times", function(){
+    var toDeleteId = $(this).parents("li.modify").attr("data-attribute");
+    
+    // DELETE
+
+    $.ajax({
+      "url": "http://157.230.17.132:3007/todos/" + toDeleteId,
+      "method": "DELETE",
+      "success": function(data){
+        alert("Hai cancellato l'elemento selezionato");
+        $("#to-do-list").html("");
+        createList();
+      },
+      "error": function(){
+        alert("Qualcosa è andato storto");
+      }
+    });
   });
 
 
-  // ;
-  // });
-
-    // $("#send-modified-data").click(function(){
-    //   var inputUser = $(this).siblings("#modify-data").val();
-    //   if (inputUser != "") {
-    //     var todoId = $(this);
-    //     // var todoId= $(this).parents("li").data("id");
-    //     console.log(todoId);
-    //
-    //     // UPDATE
-
-        // $.ajax({
-        //   "url": "http://157.230.17.132:3007/todos/" + todoId,
-        //   "method": "PATCH",
-        //   "data": {
-        //     "text": inputUser
-        //   },
-        //   "success": function(data){
-        //     alert("Hai modificato la voce");
-        //
-        //   },
-        //   "error": function(){
-        //     alert();
-        //   }
-        // });
 
 
-  // $("#to-do-list").on("click", ".fa-times", function() {
-  //
-  // }
-
-
-
-  // DELETE
-  //
-  // $.ajax({
-  //   "url": "http://157.230.17.132:3007/todos",
-  //   "method": "DELETE",
-  //   "success": function(data){
-  //
-  //   },
-  //   "error": function(){
-  //     alert();
-  //   }
-  // });
 
 });
 
 // -----------------------------
 // functions
 // -----------------------------
+
 function createList(){
   $.ajax({
     "url": "http://157.230.17.132:3007/todos",
