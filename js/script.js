@@ -37,7 +37,7 @@ $(document).ready(function(){
     })
 
   $(document).on("click", "#send-modified-data", function(){
-    var todoId = $(this).parents("li.modify").attr("data-attribute");
+    var todoId = $(this).parents("li.modify").attr("id");
     var modifyListItem = $(this).siblings("#modify-data").val();
     if (modifyListItem != "") {
       $.ajax({
@@ -60,7 +60,7 @@ $(document).ready(function(){
   });
 
   $(document).on("click", ".fa-times", function(){
-    var toDeleteId = $(this).parents("li.modify").attr("data-attribute");
+    var toDeleteId = $(this).parents("li.modify").attr("id");
 
     // DELETE
 
